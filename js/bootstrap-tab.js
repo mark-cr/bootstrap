@@ -36,7 +36,7 @@
 
   , show: function () {
       var $this = this.element
-        , $ul = $this.closest('ul:not(.dropdown-menu)')
+        , $list = $this.closest('ul:not(.dropdown-menu),ol:not(.dropdown-menu)')
         , selector = $this.attr('data-target')
         , previous
         , $target
@@ -49,7 +49,7 @@
 
       if ( $this.parent('li').hasClass('active') ) return
 
-      previous = $ul.find('.active:last a')[0]
+      previous = $list.find('.active:last a')[0]
 
       e = $.Event('show', {
         relatedTarget: previous
